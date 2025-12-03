@@ -1,11 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Alunos</h2>
-<ul>
-{% for aluno in alunos %}
-    <li>{{ aluno.nome }} {{ aluno.sobrenome }} — {{ aluno.email }}</li>
-{% empty %}
-    <li>Sem alunos cadastrados.</li>
-{% endfor %}
-</ul>
+<h2>Alunos Cadastrados</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th>Email</th>
+    </tr>
+    {% for aluno in alunos %}
+    <tr>
+        <td>{{ aluno.nome }}</td>
+        <td>{{ aluno.sobrenome }}</td>
+        <td>{{ aluno.email }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="3">Nenhum aluno cadastrado.</td></tr>
+    {% endfor %}
+</table>
 {% endblock %}
