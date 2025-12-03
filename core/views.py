@@ -3,6 +3,9 @@ from .models import Aluno, Curso
 from .forms import ProdutoForm
 from django.urls import reverse
 
+def home(request):
+    return render(request, 'home.html')
+
 def alunos_list(request):
     alunos = Aluno.objects.all()
     return render(request, 'alunos_list.html', {'alunos': alunos})
