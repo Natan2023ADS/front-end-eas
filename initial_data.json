@@ -1,0 +1,20 @@
+[
+  {
+    "model": "core.aluno",
+    "pk": 1,
+    "fields": {
+      "nome": "Carlos",
+      "sobrenome": "Silva",
+      "email": "carlos@email.com"
+    }
+  },
+  {
+    "model": "core.aluno",
+    "pk": 2,
+    "fields": {
+      "nome": "João",
+      "sobrenome": "Pereira",
+      "email": "joao@email.com"
+    }
+  }
+]
