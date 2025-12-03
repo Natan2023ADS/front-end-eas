@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Novo Aluno</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <fieldset style="width: 300px;">
+        {{ form.as_p }}
+        <button type="submit" style="padding: 6px 12px; margin-top: 10px;">
+            Salvar Aluno
+        </button>
+    </fieldset>
+</form>
+
+{% endblock %}
