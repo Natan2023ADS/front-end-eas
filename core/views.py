@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Aluno, Curso
 from .forms import ProdutoForm
 from django.urls import reverse
+from .forms import ProdutoForm, AlunoForm  # ✅ importe AlunoForm
 
 def home(request):
     return render(request, 'home.html')
@@ -23,3 +24,14 @@ def produto_new(request):
     else:
         form = ProdutoForm()
     return render(request, 'produto_form.html', {'form': form})
+
+def aluno_new(request):
+    if request.method == 'POST':
+        form = AlunoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('alunos_list')  # depois de salvar volta para listagem
+    else:
+        form = AlunoForm()
+
+    return render(request, 'aluno_form.html', {'form': form})
