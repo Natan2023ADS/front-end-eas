@@ -59,10 +59,5 @@ Este projeto já inclui `rest_framework` nas configurações. Para usar JWT:
    ```
 3. Faça requisições POST para `/api/token/` com `username` e `password` para obter `access` e `refresh`.
 
-## Observações
-- Este projeto é um ponto de partida. Dependendo da sua rubrica, podemos:
-  - Adicionar paginação, filtros, autenticação,
-  - Adicionar testes automatizados,
-  - Documentação Swagger/OpenAPI,
-  - Deploy no Heroku / Railway / Render.
+
 
