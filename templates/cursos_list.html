@@ -1,11 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Cursos</h2>
-<ul>
-{% for curso in cursos %}
-    <li>{{ curso.titulo }} — {{ curso.descricao }}</li>
-{% empty %}
-    <li>Sem cursos cadastrados.</li>
-{% endfor %}
-</ul>
+<h2>Cursos Cadastrados</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        <th>Título</th>
+        <th>Descrição</th>
+    </tr>
+    {% for curso in cursos %}
+    <tr>
+        <td>{{ curso.titulo }}</td>
+        <td>{{ curso.descricao }}</td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="2">Nenhum curso cadastrado.</td></tr>
+    {% endfor %}
+</table>
 {% endblock %}
